@@ -1,0 +1,102 @@
+/* Mobile styling */
+.navigation__container {
+    background: #15192c;
+    position: sticky;
+    top: 0;
+    background: #f39c17;
+    border-bottom: 0rem solid rgba(34, 56, 178, 0.21);
+    z-index: 1;
+}
+
+.mobileiconlabel {
+    display: inline-block;
+    position: relative;
+    font-style: normal;
+    font-size: 1.2rem;
+    padding: 20px 10px;
+    z-index: 2;
+}
+
+.menuitem {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: #15192c;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+}
+
+.active_menuitem {
+    background: #f47623;
+    color: white;
+}
+
+/* Hide checkbox and menuitems until clicked */
+.menuitems__container,
+.mobileicon {
+    display: none;
+}
+
+/* Show menuitems when mobileicon-label is clicked */
+.navigation__container input:checked ~ .menuitems__container {
+    display: block;
+    background-color: #f39c17;
+}
+
+@media screen and (min-width: 850px) {
+
+    /* --- Hide Mobile icon and its label --- */
+    .mobileiconlabel,
+    .mobileicon {
+        display: none;
+    }
+
+    .dropdown_content {
+        display: none;
+        position: absolute;
+        background-color: #ff8b01;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* --- får menupunkterne til at display flex, standard row --- */
+    .menuitems__container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+    /* --- flytter menupunkterne til flexend, så der er plads til logo --- */
+    .navigation__container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 3.5rem;
+    }
+
+    .menuitem {
+        width: 130px;
+    }
+
+    .menuitem:hover {
+        background: #f47623;
+        color: white;
+    } 
+
+    /* farveskift ved breakpoint*/
+    .menuitem {
+       color: #15192c;
+    }
+
+    .dropdown_content a {
+        color: white;
+    }
+
+    .active_menuitem {
+        background: #f47623;
+        color: #15192c;
+    }
+}
